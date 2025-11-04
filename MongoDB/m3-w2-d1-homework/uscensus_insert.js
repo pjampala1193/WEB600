@@ -1,0 +1,212 @@
+db.uscensus.insertMany([
+  {
+    "City": "Los Angeles",
+    "Zip": "90001",
+    "State": "CA",
+    "Income": 55000,
+    "Age": 35
+  },
+  {
+    "City": "San Diego",
+    "Zip": "92101",
+    "State": "CA",
+    "Income": 72000,
+    "Age": 40
+  },
+  {
+    "City": "San Francisco",
+    "Zip": "94102",
+    "State": "CA",
+    "Income": 98000,
+    "Age": 37
+  },
+  {
+    "City": "Sacramento",
+    "Zip": "95814",
+    "State": "CA",
+    "Income": 65000,
+    "Age": 39
+  },
+  {
+    "City": "Fresno",
+    "Zip": "93721",
+    "State": "CA",
+    "Income": 49000,
+    "Age": 31
+  },
+  {
+    "City": "Phoenix",
+    "Zip": "85001",
+    "State": "AZ",
+    "Income": 59000,
+    "Age": 36
+  },
+  {
+    "City": "Tucson",
+    "Zip": "85701",
+    "State": "AZ",
+    "Income": 52000,
+    "Age": 34
+  },
+  {
+    "City": "Flagstaff",
+    "Zip": "86001",
+    "State": "AZ",
+    "Income": 61000,
+    "Age": 32
+  },
+  {
+    "City": "Denver",
+    "Zip": "80202",
+    "State": "CO",
+    "Income": 74000,
+    "Age": 38
+  },
+  {
+    "City": "Boulder",
+    "Zip": "80301",
+    "State": "CO",
+    "Income": 85000,
+    "Age": 41
+  },
+  {
+    "City": "Miami",
+    "Zip": "33101",
+    "State": "FL",
+    "Income": 56000,
+    "Age": 33
+  },
+  {
+    "City": "Orlando",
+    "Zip": "32801",
+    "State": "FL",
+    "Income": 58000,
+    "Age": 30
+  },
+  {
+    "City": "Tampa",
+    "Zip": "33602",
+    "State": "FL",
+    "Income": 61000,
+    "Age": 35
+  },
+  {
+    "City": "Atlanta",
+    "Zip": "30301",
+    "State": "GA",
+    "Income": 64000,
+    "Age": 36
+  },
+  {
+    "City": "Savannah",
+    "Zip": "31401",
+    "State": "GA",
+    "Income": 52000,
+    "Age": 32
+  },
+  {
+    "City": "Chicago",
+    "Zip": "60601",
+    "State": "IL",
+    "Income": 71000,
+    "Age": 39
+  },
+  {
+    "City": "Springfield",
+    "Zip": "62701",
+    "State": "IL",
+    "Income": 58000,
+    "Age": 34
+  },
+  {
+    "City": "Indianapolis",
+    "Zip": "46204",
+    "State": "IN",
+    "Income": 62000,
+    "Age": 37
+  },
+  {
+    "City": "Louisville",
+    "Zip": "40202",
+    "State": "KY",
+    "Income": 54000,
+    "Age": 35
+  },
+  {
+    "City": "Boston",
+    "Zip": "02108",
+    "State": "MA",
+    "Income": 85000,
+    "Age": 40
+  },
+  {
+    "City": "Baltimore",
+    "Zip": "21201",
+    "State": "MD",
+    "Income": 66000,
+    "Age": 36
+  },
+  {
+    "City": "Detroit",
+    "Zip": "48201",
+    "State": "MI",
+    "Income": 52000,
+    "Age": 38
+  },
+  {
+    "City": "Minneapolis",
+    "Zip": "55401",
+    "State": "MN",
+    "Income": 73000,
+    "Age": 39
+  },
+  {
+    "City": "St. Louis",
+    "Zip": "63101",
+    "State": "MO",
+    "Income": 59000,
+    "Age": 35
+  },
+  {
+    "City": "Las Vegas",
+    "Zip": "89101",
+    "State": "NV",
+    "Income": 62000,
+    "Age": 34
+  },
+  {
+    "City": "New York",
+    "Zip": "10001",
+    "State": "NY",
+    "Income": 97000,
+    "Age": 37
+  },
+  {
+    "City": "Corona",
+    "Zip": "11368",
+    "State": "NY",
+    "Income": 55000,
+    "Age": 33
+  },
+  {
+    "City": "Portland",
+    "Zip": "97201",
+    "State": "OR",
+    "Income": 68000,
+    "Age": 36
+  },
+  {
+    "City": "Seattle",
+    "Zip": "98101",
+    "State": "WA",
+    "Income": 88000,
+    "Age": 39
+  },
+  {
+    "City": "Anchorage",
+    "Zip": "99501",
+    "State": "AK",
+    "Income": 61000,
+    "Age": 42
+  }
+]);
