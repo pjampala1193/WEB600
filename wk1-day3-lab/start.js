@@ -1,5 +1,5 @@
-const app = require('./app');
+// const app = require('./app');
+require('dotenv').config();
+const mongoose = require('mongoose');
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+mongo
