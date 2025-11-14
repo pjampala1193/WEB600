@@ -4,4 +4,88 @@
 /* Variables are in colors.scss */
 
 /* Mixin or Extend for button */
-@mixin main-
+@mixin main-button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $body-grey;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $text-dark;
+}
+
+/* Nest Main */
+main {
+  width: 1350px;
+  min-height: 535px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 10px solid $yellow-border;
+  background-color: $white;
+  display: flex;
+  gap: 1rem;
+
+  #intro-text {
+    flex: 1;
+    background-color: $card-grey;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      font-family: "Sacramento", cursive;
+      font-size: 1.8rem;
+      color: $link-blue;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin: 0 0 1rem;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 1.5rem;
+      font-size: 1rem;
+    }
+
+    .submit-button {
+      @include main-button($yellow-button, $text-dark);
+    }
+  }
+
+  #intro-image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+/* Footer */
+footer {
+  max-width: 1350px;
+  margin: 0 auto 2rem;
+  font-size: 0.8rem;
+  color: $text-dark;
+}
