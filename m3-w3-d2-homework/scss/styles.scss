@@ -1,0 +1,56 @@
+@import "colors";
+
+// Global styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $page-bg-color;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $text-color;
+  font-size: 1.2rem;
+}
+
+// Mixin for the rounded button
+@mixin pill-button($bg, $text) {
+  background-color: $bg;
+  color: $text;
+  border: none;
+  border-radius: 10px;
+}
+
+// Layout styles
+.container {
+  background-color: $border-color;
+  border: 1px solid #000;
+  display: flex;
+  height: 500px;
+  justify-content: space-between;
+  margin: 3rem auto;
+  padding: 1rem;
+  width: 50%;
+
+  // left and right panels share some styles
+  .left,
+  .right {
+    height: 100%;
+    position: relative;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .left {
+    background-color: $left-bg-color;
+    width: 69%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right {
+    background-color: $right-bg-color;
+    width: 29%;
+    display: fle
