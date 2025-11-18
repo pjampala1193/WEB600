@@ -1,0 +1,106 @@
+/* racing.less – main LESS file */
+/* colors.less – color variables */
+/* fonts.less – font variables & mixins */
+/* Reusable button mixin */
+/* Card mixin */
+/* Global */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+/* Top red bar: RACING BOOTS INC */
+.collection_text {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  color: #333333;
+  background-color: #e53935;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 24px;
+  letter-spacing: 0.18em;
+}
+/* Main section spacing */
+.about_main_layout_padding {
+  padding: 40px 0;
+}
+/* White card around content */
+.collection_section_3 {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 24px 32px;
+}
+.collection_section_3 .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.collection_section_3 .new_text {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  color: #333333;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.collection_section_3 .consectetur_text {
+  margin: 0;
+  color: #777777;
+}
+/* Left side – image */
+.racing_shoes {
+  margin-top: 20px;
+}
+.racing_shoes .shoes-img {
+  text-align: center;
+}
+.racing_shoes .shoes-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* Right side – sale text, price, button */
+.sale_text {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  color: #333333;
+  color: #e53935;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.number_text {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  color: #333333;
+  font-size: 32px;
+  color: #1565c0;
+}
+.number_text span {
+  color: #c62828;
+}
+.seemore_bt {
+  display: inline-block;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #e53935;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+/* Footer red bar */
+.copyright {
+  background-color: #d32f2f;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 0;
+  margin-top: 40px;
+}
