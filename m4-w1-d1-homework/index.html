@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validator</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+    <!-- Style for valid items -->
+    <style>
+        .has_required {
+            text-decoration: line-through;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 my-5">
+
+                <!-- Component -->
+                <password-helper inline-template>
+                    <div class="form-group mb-3">
+                        <label for="password">Enter Password:</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-control"
+                            v-model="password"
+                        >
+
+                        <span :class="hasLowercase ? 'has_required' : ''">
+                            Must contain at least one lowercase letter
+                        </span><br>
+
+                        <span :class="hasUppercase ? 'has_required' : ''">
+                            Must contain at least one uppercase letter
+                        </span><br>
+
+                        <span :class="hasNumber ? 'has_required' : ''">
+                            Must contain at least one number
+                        </span><br>
+
+                        <span :class="hasLength ? 'has_required' : ''">
+                            Must be between 6 - 12 characters long
+                        </span>
+                    </div>
+                </password-helper>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vue Scripts -->
+<script>
+    Vue.component("password-helper", {
+        data() {
+            return {
+                password: "",
+                hasLowercase: false,
+                hasUppercase: false,
+                hasNumber: false,
+                hasLength: false
+            };
+        },
+        watch: {
+            password(newVal) {
+                this.hasLowercase = /[a-z]/.test(newVal);
+                this.hasUppercase = /[A-Z]/.test(newVal);
+                this.hasNumber    = /\d/.test(newVal);
+                this.hasLength    = /^.{6,12}$/.test(newVal);
+            }
+        }
+    });
+
+    new Vue({
+        el: "#app"
+    });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
