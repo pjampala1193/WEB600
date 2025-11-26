@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Arrays, Event Listeners and Hooks</title>
+
+  <style>
+    #root {
+      margin: 30px;
+    }
+
+    ul {
+      width: 260px;
+      padding: 30px 30px 30px 30px;
+      border-radius: 10px;
+      background-color: rgb(222, 248, 188);
+    }
+
+    li {
+      list-style-type: none;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      background-color: rgb(224, 21, 32);
+      border: 1px solid rgb(182, 181, 181);
+      padding: 8px 14px;
+      color: white;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 6px 10px;
+      font-size: 16px;
+    }
+  </style>
+
+  <!-- Vue CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="root">
+
+    <!-- Grocery list box -->
+    <div class="shoplist-box">
+      <ul>
+        <!-- v-for loops through each item in shoplist -->
+        <li v-for="item in shoplist" :key="item">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Input + button controls -->
+    <div class="controls">
+      <input
+        id="inputItem"
+        type="text"
+        v-model="newItem"
+        placeholder="Add a grocery item"
+      />
+
+      <button id="btn" v-on:click="addItem">
+        Add item
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    let app = new Vue({
+      el: '#root',
+
+      data: {
+        // default grocery list
+        shoplist: ['Salad', 'Eggs', 'Apples', 'Chicken'],
+
+        // input box model
+        newItem: ''
+      },
+
+      methods: {
+        addItem() {
+          const trimmed = this.newItem.trim();
+
+          if (trimmed !== '') {
+            this.shoplist.push(trimmed);
+          }
+
+          // always clear the input, per the slides
+          this.newItem = '';
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
