@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h1 Registration Form
+
+    if message
+        p(style="color: green")= message
+
+    if errors
+        ul(style="color: red")
+            each err in errors
+                li= err.msg
+
+    form(action="/" method="POST")
+        label(for="name") Name
+        input(type="text" name="name" id="name" value=data?.name)
+
+        label(for="email") Email
+        input(type="email" name="email" id="email" value=data?.email)
+
+        label(for="username") Username
+        input(type="text" name="username" id="username" value=data?.username)
+
+        label(for="password") Password
+        input(type="password" name="password" id="password")
+
+        button(type="submit") Submit
+
+    hr
+
+    h2 All Registrations (Admin Only)
+    p Visit /registrations and enter your htpasswd credentials.
