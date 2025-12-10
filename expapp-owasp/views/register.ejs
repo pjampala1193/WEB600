@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <style>
+      .error {
+        color: red;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Register</h1>
+
+    <form id="registerForm" action="/register" method="POST">
+      <!-- Username -->
+      <div>
+        <label for="username">Username</label><br />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+        />
+        <div id="usernameError" class="error"></div>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email">Email</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+        />
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label for="phone">Phone</label><br />
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+        />
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        />
+        <div id="passwordError" class="error"></div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div>
+        <label for="confirmPassword">Confirm Password</label><br />
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        />
+        <div id="confirmPasswordError" class="error"></div>
+      </div>
+
+      <div>
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+
+    <p>
+      Already have an account?
+      <a href="/login">Login</a>
+    </p>
+
+    <p>
+      <a href="/">Back to Home</a>
+    </p>
+
+    <script>
+      const form = document.getElementById('registerForm');
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirmPassword');
+
+      const usernameError = document.getElementById('usernameError');
+      const passwordError = document.getElementById('passwordError');
+      const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+      form.addEventListener('submit', function (e) {
+        let hasError = false;
+
+        // Clear errors
+        usernameError.textContent = '';
+        passwordError.textContent = '';
+        confirmPasswordError.textContent = '';
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        // Basic username rule: at least 4 chars
+        if (username.length < 4) {
+          usernameError.textContent = 'Username must be at least 4 characters.';
+          hasError = true;
+        }
+
+        // Basic password strength: 8+ chars, 1 number, 1 letter
+        const hasMinLength = password.length >= 8;
+        const hasNumber = /\d/.test(password);
+        const hasLetter = /[A-Za-z]/.test(password);
+
+        if (!hasMinLength || !hasNumber || !hasLetter) {
+          passwordError.textContent =
+            'Password must be at least 8 characters and contain letters and numbers.';
+          hasError = true;
+        }
+
+        // Confirm password match
+        if (password !== confirmPassword) {
+          confirmPasswordError.textContent = 'Passwords do not match.';
+          hasError = true;
+        }
+
+        if (hasError) {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
