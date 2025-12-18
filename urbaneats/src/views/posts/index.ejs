@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+
+<div class="d-flex justify-content-between align-items-center">
+  <h3>Food Blog</h3>
+  <% if (currentUser) { %>
+    <a class="btn btn-success btn-sm" href="/posts/new">New Post</a>
+  <% } %>
+</div>
+
+<hr/>
+
+<% if (!posts.length) { %>
+  <p>No posts yet.</p>
+<% } %>
+
+<div class="row">
+  <% posts.forEach(p => { %>
+    <div class="col-md-6 mb-3">
+      <div class="card h-100">
+        <% if (p.imageUrl) { %>
+          <img class="card-img-top" src="<%= p.imageUrl %>" alt="post image">
+        <% } %>
+        <div class="card-body">
+          <h5 class="card-title"><%= p.title %></h5>
+          <p class="card-text"><%= p.description %></p>
+          <% if (p.tags && p.tags.length) { %>
+            <div class="small text-muted">Tags: <%= p.tags.join(", ") %></div>
+          <% } %>
+          <div class="small text-muted mt-2">
+            <%= new Date(p.createdAt).toLocaleString() %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+<%- include("../partials/footer") %>
